@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { auth, db } from '../firebase';
 import {setDoc, doc, Timestamp} from 'firebase/firestore'
-import {useNavigate} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 const Register = () => {
     const [data, setData] = useState({
@@ -14,7 +14,7 @@ const Register = () => {
     })
 
     const {name, email, password, error, loading} = data;
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const handleChange = (e) => {
         setData({...data, [e.target.name] : e.target.value})
@@ -48,7 +48,7 @@ const Register = () => {
                 error: null, 
                 loading: false
             })
-            navigate('/')
+            history.push('/')
         } catch (err) {
             setData({...data, error: err.message, loading: false})
         }

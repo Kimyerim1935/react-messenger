@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import { auth, db } from '../firebase';
 import {updateDoc, doc} from 'firebase/firestore'
-import {useNavigate} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -13,7 +13,7 @@ const Login = () => {
     })
 
     const {email, password, error, loading} = data;
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const handleChange = (e) => {
         setData({...data, [e.target.name] : e.target.value})
@@ -40,7 +40,7 @@ const Login = () => {
                 error: null, 
                 loading: false
             })
-            navigate('/')
+            history.replace('/')
         } catch (err) {
             setData({...data, error: err.message, loading: false})
         }
