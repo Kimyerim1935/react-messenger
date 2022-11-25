@@ -118,10 +118,11 @@ const Home = () => {
                             <h3>{chat.name}</h3>
                         </div>
                         <div className="messages">
-                            {console.log(msgs)}
-                            {msgs.length
+                            {
+                                msgs.length
                                 ? msgs.map((msg, i) => <Message key={i} msg={msg} user1={user1} />) 
-                                : null}
+                                : null
+                            }
                         </div>
                         <MessageForm 
                             handleSubmit={handleSubmit}
