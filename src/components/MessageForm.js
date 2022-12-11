@@ -1,5 +1,5 @@
 import React from 'react';
-import Attachment from './svg/Attachment';
+import Attachment from '../assets/svg/Attachment';
 
 const MessageForm = ({handleSubmit, text, setText, setImg}) => {
     return (
