@@ -1,0 +1,74 @@
+@use 'src/styles/variable' as color;
+@use 'src/styles/layout' as layout;
+
+.homeWrapper {
+  background: beige;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .homeContainer {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 65%;
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
+
+    @include layout.tablet {
+      width: 90%;
+    }
+
+    .sidebarWrapper {
+      flex: 1;
+      background: color.$lightBrown;
+      position: relative;
+
+      .navbarWrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background: color.$vintageDarkRed;
+        height: 50px;
+        box-sizing: border-box;
+        padding: 10px;
+        justify-content: space-between;
+        color: white;
+
+        .logo {
+          font-weight: bold;
+          @include layout.tablet {
+            display: none;
+          }
+        }
+
+        .user {
+          display: flex;
+          gap: 10px;
+
+          img {
+            background: color.$beige;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          button {
+            background: color.$vintageRed;
+            border: none;
+            color: color.$beige;
+            font-size: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            @include layout.tablet {
+              position: absolute;
+              bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

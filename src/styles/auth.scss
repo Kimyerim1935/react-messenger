@@ -1,0 +1,93 @@
+@use 'src/styles/variable' as color;
+@use 'src/styles/layout';
+
+.formContainer {
+  background-color: color.$beige;
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrapper {
+  background: white;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  .logo {
+    color: color.$vintageRed;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .title {
+    color: color.$vintageRed;
+    font-size: 12px
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    div + div {
+      margin-top: 15px;
+    }
+
+    input {
+      width: 400px;
+      box-sizing: border-box;
+      padding: 15px 10px;
+      border: none;
+      border-bottom: 1px solid color.$beige;
+      &::placeholder{
+        color: rgb(175,175,175);
+      }
+      &:focus{
+        outline: none;
+        border-bottom: 1px solid color.$vintageDarkRed;
+      }
+    }
+
+    input[type="file"]{
+      display: none;
+    }
+    button {
+      background: color.$lightBrown;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: color.$vintageGreen;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: color.$vintageRed;
+    font-size: 12px;
+    cursor: pointer;
+
+    img {
+      width: 36px;
+    }
+  }
+  p {
+    color: color.$vintageRed;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+
