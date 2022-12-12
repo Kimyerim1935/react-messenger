@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import NewHome from './pages/newHome';
 
 import Register from './pages/Register';
+import NewRegister from './components/newComponents/Register';
 import Login from './pages/Login';
 import NewLogin from './components/newComponents/Login';
 
@@ -18,7 +19,7 @@ function App() {
       <BrowserRouter>
       <Navbar />
         <Switch>
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/register" component={NewRegister} />
           <Route exact path="/login" component={NewLogin} />
           <PrivateRoute exact path="/profile" component={Profile} />
           <PrivateRoute exact path="/" component={Home} />
