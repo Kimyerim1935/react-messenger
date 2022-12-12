@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Add from '../../assets/img/img.png';
-import styles from '../../styles/auth.scss';
-import {useHistory} from "react-router-dom";
+import styles from '../../styles/auth.module.scss';
+import {useHistory, Link} from "react-router-dom";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {auth, db} from "../../firebase";
 import {doc, updateDoc} from "firebase/firestore";
@@ -54,10 +54,10 @@ const Login = () => {
   }
 
   return (
-    <div className="formContainer">
-      <div className="formWrapper">
-        <span className="logo">Happy chat</span>
-        <span className="title">Login</span>
+    <div className={styles.formContainer}>
+      <div className={styles.formWrapper}>
+        <span className={styles.logo}>Happy chat</span>
+        <span className={styles.title}>Login</span>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
@@ -73,7 +73,10 @@ const Login = () => {
         </form>
 
         <p>
-          You do have an account? Register
+          You do have an account?
+          <Link to="/register">
+            Register
+          </Link>
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import Sidebar from '../components/newComponents/Sidebar';
 import Chat from '../components/newComponents/Chat';
-import styles from '../styles/home.scss';
+import styles from '../styles/home.module.scss';
 
 const NewHome = () => {
   return (
