@@ -1,4 +1,4 @@
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import Search from "./Search";
 import Chats from "./Chats";
 import styles from '../../styles/home.module.scss';
