@@ -1,7 +1,7 @@
 import Camera from '../../assets/img/camera.png';
 import AddUser from '../../assets/img/add_user.png';
 import More from '../../assets/img/more.png';
-import Messages from "../newComponents/Messages";
+import Messages from "./Messages";
 // import Input from './Input';
 import styles from '../../styles/chat.moudule.scss';
 
